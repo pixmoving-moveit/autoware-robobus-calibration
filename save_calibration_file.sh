@@ -19,7 +19,7 @@ child_frame='[]'
 output_yaml_file='sensors_calibration.yaml'
 
 cat<<EOF
-a: robobus sensor_top 到 os_lidar_fl os_lidar_fr os_lidar_rl os_lidar_rr
+a: robobus lidar_front_base_link 到 lidar_fl_base_link,lidar_fr_base_link,lidar_rear_base_link
 b: robobus os_lidar_ancillary 到 camera_top
 c: robobus os_lidar_ancillary 到 camera_front
 d: robobus sensor_top 到 os_lidar_ancillary
@@ -28,8 +28,8 @@ EOF
 read -p "请输入标定序号(a-c): " choice
 case "$choice" in
     a)
-        parent_frame='sensor_top'
-        child_frame='[os_lidar_fl,os_lidar_fr,os_lidar_rl,os_lidar_rr]'
+        parent_frame='lidar_front_base_link'
+        child_frame='[lidar_fl_base_link,lidar_fr_base_link,lidar_rear_base_link]'
         output_yaml_file='sensor_top2lidar-4.yaml'
     ;;
 
