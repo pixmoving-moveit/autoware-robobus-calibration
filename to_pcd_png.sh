@@ -16,13 +16,14 @@ function log_error() {
 
 source ~/pix/robobus/robobus-calibration/install/setup.bash 
 
+root=$1
+
 function process()
 {
-  ros2bag=$1
-  path="/home/pixbus/pix/ros2bag/livox2camera2024/$ros2bag"
+  path=$root/$1
 
   lidar_topic="/front/livox/points"
-  image_topics="['/gmsl/image_raw']"
+  image_topics="['/gmsl/rect_resize/image_raw']"
 
   ros2 launch $SCRIPT_DIR/launcher/rosbag2_to_pcd_png.launch.xml \
       path:=$path \
@@ -44,7 +45,7 @@ function process()
 
 function main()
 {
-  array=($@)
+  array=($(ls $root | grep rosbag2_2024))
   for element in "${array[@]}"
   do
     echo  $element
@@ -52,6 +53,11 @@ function main()
     process $element
     log_info "--------------------------------------------"
   done
+
+  rm -rf $root/output
+  mkdir $root/output
+  cd $root
+  mv *p* $root/output
 }
 
-main $@
+main 
