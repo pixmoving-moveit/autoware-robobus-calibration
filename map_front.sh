@@ -4,8 +4,8 @@ source $SCRIPT_DIR/../install/setup.bash
 
 ros2 launch  multi_lidar_calibration multi_lidar_calibration_ndt_map.launch.xml \
     pcd_path:=$SCRIPT_DIR/load_pcd/scans_down.pcd \
-    input/target_pointcloud:=/sensing/lidar/front/livox/points \
-    initial_pose:='[-12.3987, 0.0, 0.473833,  0.0,   0.1, 3.14]'\
+    input/target_pointcloud:=/front/livox/points \
+    initial_pose:='[-7.3987, 0.0, 0.473833,  0.0,   0.0, 3.14]'\
     node_name:='rs_122'
 
 
