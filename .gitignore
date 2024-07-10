@@ -11,7 +11,7 @@ log/
 src/*
 
 # 但不忽略 src/vendor/image_transport_decompressor 目录
-!src/vendor/image_transport_decompressor/
+!src/image_transport_decompressor
 
 # Python
 *.pyc
