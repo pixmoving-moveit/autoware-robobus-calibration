@@ -1,8 +1,22 @@
 repositories:
+  # sensor_component
   sensor_component/ouster-ros:
     type: git
     url: https://github.com/pixmoving-auto/ouster-ros.git
     version: feature/robobus
+  sensor_component/external/Livox-SDK2:
+    type: git
+    url: https://github.com/pixmoving-auto/Livox-SDK2.git
+    version: feature/robobus
+  sensor_component/external/livox_ros_driver2:
+    type: git
+    url: https://github.com/pixmoving-auto/livox_ros_driver2.git
+    version: feature/robobus
+  sensor_component/external/usb_cam:
+    type: git
+    url: https://github.com/pixmoving-auto/usb_cam.git
+    version: feature/robobus
+  # autoware
   autoware/CalibrationTools:
     type: git
     url: https://github.com/pixmoving-moveit/CalibrationTools.git
