@@ -7,11 +7,7 @@ pcd_metadata_param.yaml
 build/
 install/
 log/
-# 忽略 src 目录
-src/*
-
-# 但不忽略 src/vendor/image_transport_decompressor 目录
-!src/image_transport_decompressor
+/src/
 
 # Python
 *.pyc
